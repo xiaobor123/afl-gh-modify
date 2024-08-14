@@ -1,0 +1,26 @@
+[HOOK2] 137 138
+
+
+Yes:
+
+      ****** WeLoveLinux****** 
+
+[qemu] doing qemu_execven on filename /bin/sh
+[qemu] Using custom bind, forcing ipv6 protocol to ipv4 on addr 0.0.0.0 port 80
+[qemu] Trying ip: 0.0.0.0 on sockfd 23
+[qemu] Successful Bind 0
+webs: Listening for HTTP requests at address 0.0.0.0
+[HOOK] select invoked with nfd: 24
+[HOOK] http_fd: 23
+[HOOK] setting fd!
+[HOOK] accept hooked!
+[HOOK] accept at port: 80
+[HOOK] accept sock fd: 24
+[HOOK] getsockname invoked!
+[HOOK] before inet_pton!
+[HOOK] after inet_pton!
+[HOOK] after host_to_target_sockaddr!
+return addr: 0x0040d96c
+checking fd: 23
+port: 80
+[HOOK] accept4 hooked!

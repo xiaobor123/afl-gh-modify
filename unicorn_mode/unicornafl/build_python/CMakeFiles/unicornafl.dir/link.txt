@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -O3 -DNDEBUG -shared -Wl,-soname,libunicornafl.so -o libunicornafl.so CMakeFiles/unicornafl.dir/unicornafl.cpp.o  -Wl,-rpath,/home/minipython/Downloads/AFLplusplus_gh/unicorn_mode/unicornafl/build_python/unicorn unicorn/libunicorn.so.2 -lm
