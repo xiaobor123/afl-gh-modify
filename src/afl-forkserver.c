@@ -1536,7 +1536,6 @@ afl_fsrv_run_target(afl_forkserver_t *fsrv, u32 timeout,
 
   exec_ms = read_s32_timed(fsrv->fsrv_st_fd, &fsrv->child_status, timeout,
                            stop_soon_p);
-  DEBUGF("exec_ms: %u", exec_ms);
   if (exec_ms > timeout) {
 
     /* If there was no response from forkserver after timeout seconds,

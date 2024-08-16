@@ -64,7 +64,6 @@ afl-lto++.8
 afl-lto.8
 qemu_mode/libcompcov/compcovtest
 qemu_mode/qemu-*
-qemu_mode/qemuafl
 unicorn_mode/samples/*/\.test-*
 unicorn_mode/samples/*/output/
 test/unittests/unit_maybe_alloc
