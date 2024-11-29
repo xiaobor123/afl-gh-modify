@@ -3743,10 +3743,10 @@ static abi_long do_accept4(int fd, abi_ulong target_addr,
         socklen_t len = sizeof(sin);
         uint16_t port = 0;
         // int new_fd = -1;
-        if(conn_fd != -1) {
-            fputs("[HOOK] deny subsequent accept calls!\n", bk_stdout);
-            return -EAGAIN;
-        }
+        //if(conn_fd != -1) {
+            //fputs("[HOOK] deny subsequent accept calls!\n", bk_stdout);
+            //return -EAGAIN;
+        //}
 
         fputs("[HOOK] accept hooked!\n", bk_stdout);
         if(getsockname(fd, (struct sockaddr *)&sin, &len)) goto out;
@@ -8864,7 +8864,7 @@ static abi_long do_syscall1(void *cpu_env, int num, abi_long arg1,
         return ret;
 #endif
     case TARGET_NR_close:
-        // fprintf(bk_stdout, "[HOOK] close fd: %d\n", arg1);
+        //fprintf(bk_stdout, "[HOOK] close fd: %d\n", arg1);
         if(arg1 == bk_stdin_fd || arg1 == bk_stdout_fd) {
             fprintf(bk_stdout, "[HOOK] deny attempts to close fd: %d\n", arg1);
             return 0;
@@ -8872,9 +8872,10 @@ static abi_long do_syscall1(void *cpu_env, int num, abi_long arg1,
         if(conn_fd >=0 && arg1 == conn_fd) {
             fputs("[HOOK] close!\n", bk_stdout);
             exit(0);
-        }
-        return get_errno(shutdown(arg1, arg2));
+        } 
+        //return get_errno(shutdown(arg1, arg2));
         if (unlikely(arg1 == TSL_FD))
+            //fprintf(bk_stdout, "[HOOK] close fd1: %d\n", TSL_FD);
             return 0x00;
         fd_trans_unregister(arg1);
         return get_errno(close(arg1));

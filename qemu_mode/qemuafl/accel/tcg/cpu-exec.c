@@ -1113,6 +1113,9 @@ cpu_tb_exec(CPUState *cpu, TranslationBlock *itb, int *tb_exit)
     uintptr_t ret;
     TranslationBlock *last_tb;
     const void *tb_ptr = itb->tc.ptr;
+    //fprintf(bk_stdout, "main_bin_start" TARGET_FMT_lx "\n", main_bin_start);
+    //fprintf(bk_stdout, "main_bin_end" TARGET_FMT_lx "\n", main_bin_end);
+    //fprintf(bk_stdout, "itb->pc" TARGET_FMT_lx "\n", itb->pc);
 
     if(unlikely(gh_dryrun_done)) {
         if(main_bin_start <= itb->pc && itb->pc <= main_bin_end) {
